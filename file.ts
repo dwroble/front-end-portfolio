@@ -119,7 +119,15 @@ function SpaceAge(value: string){
 }
 
 function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): void {
-    console.log("Your age, if you were to live on " + value + " would be: " + ageInYears.toFixed(1) + " years old. In seconds that would be: " + ageInSeconds.toFixed(0) + " seconds!");
+
+    var resultsHeader = document.getElementById("planet-result-header");
+    var yearResults = document.getElementById("planet-result-years");
+    var secondsResult = document.getElementById("planet-result-seconds");
+
+    resultsHeader.innerHTML = "Your age, if you were to live on " + value + " would be:";
+    yearResults.innerHTML = "<strong>" + ageInYears.toFixed(1) + "</strong> years old.";
+    secondsResult.innerHTML = "<strong>" + ageInSeconds.toFixed(0) + "</strong> seconds old."; 
+    //console.log("Your age, if you were to live on " + value + " would be: " + ageInYears.toFixed(1) + " years old. In seconds that would be: " + ageInSeconds.toFixed(0) + " seconds!");
 }
 
 function RobotName(){

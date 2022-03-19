@@ -2,8 +2,17 @@ body {
     width: 100%;
 }
 
+#planets {
+    margin-top: inherit;
+}
+
 #planet-form {
     background-color: khaki;
+}
+
+#planet-results {
+    background-color: lavender;
+    height: auto;
 }
 
 #wordy {

@@ -11,26 +11,33 @@
   <body>
     <button id="execute-button">Run Panagram</button>
     <br>
-    <div id="planet-form" class="common-form">
-        <h3>Your age on other planets</h3>
-        <div id="planet-value-input">
-            <label for="age-input">Enter Your Age:</label>
-            <input id="age-input">
+    <div id="planets">
+        <div id="planet-form" class="common-form">
+            <h3>Your age on other planets</h3>
+            <div id="planet-value-input">
+                <label for="age-input">Enter Your Age:</label>
+                <input id="age-input">
+            </div>
+            <div>
+                <select name="planets" id="planet-list" onchange="SpaceAge(this.options[this.selectedIndex].value)">
+                    <option value="initial">Select Planet</option>
+                    <option value="mercury">Mercury</option>
+                    <option value="venus">Venus</option>
+                    <option value="earth">Earth</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturn">Saturn</option>
+                    <option value="uranus">Uranus</option>
+                    <option value="neptune">Neptune</option>
+                </select>
+            </div>
+            <!-- <button id="planets-enter-button">Enter</button> -->
         </div>
-        <div>
-            <select name="planets" id="planet-list" onchange="SpaceAge(this.options[this.selectedIndex].value)">
-                <option value="initial">Select Planet</option>
-                <option value="mercury">Mercury</option>
-                <option value="venus">Venus</option>
-                <option value="earth">Earth</option>
-                <option value="mars">Mars</option>
-                <option value="jupiter">Jupiter</option>
-                <option value="saturn">Saturn</option>
-                <option value="uranus">Uranus</option>
-                <option value="neptune">Neptune</option>
-            </select>
+        <div id="planet-results" class="common-form">
+            <p id="planet-result-header"></p>
+            <p id="planet-result-years"></p>
+            <p id="planet-result-seconds"></p>
         </div>
-        <!-- <button id="planets-enter-button">Enter</button> -->
     </div>
 
     <div id="robot-name" class="common-form">
