@@ -126,9 +126,29 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
     var yearResults = document.getElementById("planet-result-years");
     var secondsResult = document.getElementById("planet-result-seconds");
 
+    var ageSecondString: string = "";
+    var outputSeconds: string = "";
+
+    console.log("Value: " + ageInSeconds.toFixed(0));
+
+    var outputArray = ageInSeconds.toFixed(0).toString().split("");
+    var reverseArray = outputArray.reverse();
+    outputSeconds = outputArray.join("").toString();
+
+    console.log(outputSeconds);
+
+    for(let i = outputSeconds.length - 1; i >= 0; i--){
+        console.log("String: " + outputSeconds[i]);
+        console.log("Mod: " + i % 3);
+        ageSecondString += outputSeconds[i];
+        if(i != 0 && i % 3 == 0){
+            ageSecondString += ',';
+        }
+    }
+
     resultsHeader.innerHTML = "Your age, if you lived on " + value + ", would be:";
     yearResults.innerHTML = "<strong>" + ageInYears.toFixed(1) + "</strong> years old.";
-    secondsResult.innerHTML = "<strong>" + ageInSeconds.toFixed(0) + "</strong> seconds old."; 
+    secondsResult.innerHTML = "<strong>" + ageSecondString + "</strong> seconds old."; 
     //console.log("Your age, if you were to live on " + value + " would be: " + ageInYears.toFixed(1) + " years old. In seconds that would be: " + ageInSeconds.toFixed(0) + " seconds!");
 }
 
