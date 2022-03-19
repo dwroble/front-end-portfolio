@@ -32,6 +32,10 @@ body {
     background-color: lightblue;
 }
 
+.input-values {
+    width: 15%;
+}
+
 .common-form {
     margin: inherit;
     padding-top: 10px;

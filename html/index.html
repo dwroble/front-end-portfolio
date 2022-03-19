@@ -46,7 +46,13 @@
 
     <div id="wordy" class="common-form" onmouseenter="WordyTooltipOn()" onmouseleave="WordyTooltipOff()">
         <div id="wordy-button-div">
-            <p>This is some text that could pop up to tell people what things are and how to work them!</p>
+            <p>This is some text that could pop up to tell people what things are and how to work them! Make sure your console is open!</p>
+            <input class="input-values" id="first-value" width="25%">
+            <select id="operator">
+                <option value="plus">plus</option>
+                <option value="minus">minus</option>
+            </select>
+            <input class="input-values" id="second-value">
         </div>
         <button id="add-name" onclick="Wordy()">Calculate Word Problem</button>
     </div>

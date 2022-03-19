@@ -66,7 +66,9 @@ function SpaceAge(value: string){
     let selection = document.querySelector("#planet-list") as HTMLSelectElement;
 
     if(ageInput.value == ""){
-        console.log("Please enter your age to continue.")
+        document.getElementById("planet-result-header").innerHTML = "Please enter your age to continue.";
+        document.getElementById("planet-result-years").innerHTML = "";
+        document.getElementById("planet-result-seconds").innerHTML = "";
         selection.value = "initial";
     }
     else{
@@ -124,7 +126,7 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
     var yearResults = document.getElementById("planet-result-years");
     var secondsResult = document.getElementById("planet-result-seconds");
 
-    resultsHeader.innerHTML = "Your age, if you were to live on " + value + " would be:";
+    resultsHeader.innerHTML = "Your age, if you lived on " + value + ", would be:";
     yearResults.innerHTML = "<strong>" + ageInYears.toFixed(1) + "</strong> years old.";
     secondsResult.innerHTML = "<strong>" + ageInSeconds.toFixed(0) + "</strong> seconds old."; 
     //console.log("Your age, if you were to live on " + value + " would be: " + ageInYears.toFixed(1) + " years old. In seconds that would be: " + ageInSeconds.toFixed(0) + " seconds!");
