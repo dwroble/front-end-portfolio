@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+}
+
+#planet-form {
+    background-color: khaki;
+}
+
+#wordy {
+    background-color: lightgreen;
+}
+
+#wordy-button-div {
+    display: none;
+}
+
+#planet-list {
+    margin-top: 5px;
+    margin-left: 130px;
+}
+
+#robot-name {
+    background-color: lightblue;
+}
+
+.common-form {
+    margin: inherit;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    width: 25%;
+}
