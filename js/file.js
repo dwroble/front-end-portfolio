@@ -175,7 +175,7 @@ function Wordy() {
         '': function (x) { return x ? 0 : x = null; }
     };
     for (var i = 0; i < inputArray.length; i++) {
-        var operatorArray = ['plus', 'minus', 'times', 'multiplied', 'divided', 'power'];
+        var operatorArray = ['plus', 'added', 'add', 'minus', 'times', 'multiplied', 'divided', 'power'];
         if (parseInt(inputArray[i])) {
             numericalValues.push(parseInt(inputArray[i]));
         }
@@ -184,6 +184,10 @@ function Wordy() {
                 case 'plus':
                     operator = '+';
                     break;
+                case 'added':
+                    operator = '+';
+                case 'add':
+                    operator = '+';
                 case 'minus':
                     operator = '-';
                     break;
