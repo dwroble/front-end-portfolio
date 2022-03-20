@@ -9,7 +9,10 @@
 	<script type="text/javascript" src="../js/file.js"></script>
   </head>
   <body>
-    <button id="execute-button">Run Panagram</button>
+    <div id="panagram" class="common-form">
+        <!-- <input id="panagram-input"> -->
+        <button id="execute-button">Run Panagram</button>
+    </div>
     <br>
     <div id="planets">
         <div id="planet-form" class="common-form">
@@ -31,7 +34,6 @@
                     <option value="neptune">Neptune</option>
                 </select>
             </div>
-            <!-- <button id="planets-enter-button">Enter</button> -->
         </div>
         <div id="planet-results" class="common-form">
             <p id="planet-result-header"></p>
@@ -46,13 +48,10 @@
 
     <div id="wordy" class="common-form" onmouseenter="WordyTooltipOn()" onmouseleave="WordyTooltipOff()">
         <div id="wordy-button-div">
-            <p>This is some text that could pop up to tell people what things are and how to work them! Make sure your console is open!</p>
-            <input class="input-values" id="first-value" width="25%">
-            <select id="operator">
-                <option value="plus">plus</option>
-                <option value="minus">minus</option>
-            </select>
-            <input class="input-values" id="second-value">
+            <p>
+                To use this, go into file.js and change the input value in the wordy function. 
+                Make sure your console is open to view results!
+            </p>
         </div>
         <button id="add-name" onclick="Wordy()">Calculate Word Problem</button>
     </div>

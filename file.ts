@@ -184,7 +184,10 @@ function RobotName(){
 
 function Wordy(): void{
     let regEx = /[,.?!]/;
-    let input: string = "What is 5 times 13?";
+
+    //Change this to any simple math word problem
+    let input: string = "How many times does 5 go into 13?";
+
     let filteredInput = input.replace(regEx, '');
     let inputArray = filteredInput.split(' ');
     let numericalValues: number[] = [];
@@ -200,7 +203,7 @@ function Wordy(): void{
     }
 
     for (let i = 0; i < inputArray.length; i++){
-        let operatorArray: string[] = ['plus', 'minus', 'times', 'multiplied', 'divided', 'power']
+        let operatorArray: string[] = ['plus', 'added', 'add', 'minus', 'times', 'multiplied', 'divided', 'power']
 
         if(parseInt(inputArray[i])){
             numericalValues.push(parseInt(inputArray[i]));
@@ -211,6 +214,10 @@ function Wordy(): void{
                 case 'plus':
                     operator = '+';
                     break;
+                case 'added':
+                    operator = '+';
+                case 'add':
+                    operator = '+';
                 case 'minus':
                     operator = '-';
                     break;

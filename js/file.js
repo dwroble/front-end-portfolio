@@ -160,7 +160,8 @@ function RobotName() {
 }
 function Wordy() {
     var regEx = /[,.?!]/;
-    var input = "What is 5 times 13?";
+    //Change this to any simple math word problem
+    var input = "How many times does 5 go into 13?";
     var filteredInput = input.replace(regEx, '');
     var inputArray = filteredInput.split(' ');
     var numericalValues = [];

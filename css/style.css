@@ -2,6 +2,10 @@ body {
     width: 100%;
 }
 
+#panagram {
+    background-color: lightsalmon;
+}
+
 #planets {
     margin-top: inherit;
 }
@@ -11,12 +15,12 @@ body {
 }
 
 #planet-results {
-    background-color: lavender;
+    background-color: lightgreen;
     height: auto;
 }
 
 #wordy {
-    background-color: lightgreen;
+    background-color: lavender;
 }
 
 #wordy-button-div {
@@ -30,10 +34,6 @@ body {
 
 #robot-name {
     background-color: lightblue;
-}
-
-.input-values {
-    width: 15%;
 }
 
 .common-form {
