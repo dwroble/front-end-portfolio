@@ -2,8 +2,19 @@ body {
     width: 100%;
 }
 
-#panagram {
+#pangram {
     background-color: lightsalmon;
+    width: 50% !important;
+}
+
+#pangram-input {
+    width: 70%;
+}
+
+#pangram-results {
+    display: none;
+    background-color: peachpuff;
+    width: 50% !important;
 }
 
 #planets {
@@ -15,6 +26,7 @@ body {
 }
 
 #planet-results {
+    display: none;
     background-color: lightgreen;
     height: auto;
 }

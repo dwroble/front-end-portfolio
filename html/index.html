@@ -9,9 +9,17 @@
 	<script type="text/javascript" src="../js/file.js"></script>
   </head>
   <body>
-    <div id="panagram" class="common-form">
-        <!-- <input id="panagram-input"> -->
-        <button id="execute-button">Run Panagram</button>
+    <div>
+        <div id="pangram" class="common-form">
+            <label for="pangram-input">Enter a phrase to see if it contains all the letters of the alphabet:</label>
+            <p>(Example: The quick brown fox jumps over a lazy dog)</p>
+            <br>
+            <input id="pangram-input">
+            <button id="execute-button">Run Pangram</button>
+        </div>
+        <div id="pangram-results" class="common-form">
+            <p id="pangram-result"></p>
+        </div>
     </div>
     <br>
     <div id="planets">

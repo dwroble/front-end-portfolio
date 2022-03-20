@@ -3,9 +3,12 @@ window.onload = function() {
     if(document.readyState == "complete"){
         console.log("Ready");
         var executeButton = document.getElementById("execute-button");
+        var pangramInput = document.getElementById("pangram-input") as HTMLInputElement;
 
         executeButton.onclick =  function() {
-            Pangram("Two driven jocks help fax my big quiz.");
+            console.log(pangramInput.value);
+            Pangram(pangramInput.value);
+            //Pangram("Two driven jocks help fax my big quiz.");
         }
     }
     else{
@@ -19,7 +22,7 @@ function Pangram(name: string): void {
                     's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     name = name.toLowerCase();
-    const regEx = /[,.]/g;
+    const regEx = /[,.():'"?!]/g;
     var filteredName = name.replace(regEx, '');
     let nameArray = filteredName.split("");
     let sortedName = nameArray.sort();
@@ -37,14 +40,14 @@ function Pangram(name: string): void {
         }
     }
 
+    document.getElementById('pangram-results').style.display = 'block';
+
     if (JSON.stringify(pickedList) == JSON.stringify(alphabet)){
-        console.log("Success");
+        document.getElementById('pangram-result').innerHTML = "{" + name + "}: <u>is a pangram!</u>"
     }
     else{
-        console.log("Failure");
+        document.getElementById('pangram-result').innerHTML = "{" + name + "} <u>is NOT a pangram!</u>"
     }
-    console.log("PickList: " + JSON.stringify(pickedList));
-    console.log("Alphabet: " + JSON.stringify(alphabet));
 }
 
 function SpaceAge(value: string){
@@ -129,8 +132,6 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
     var ageSecondString: string = "";
     var outputSeconds: string = "";
 
-    console.log("Value: " + ageInSeconds.toFixed(0));
-
     var outputArray = ageInSeconds.toFixed(0).toString().split("");
     var reverseArray = outputArray.reverse();
     outputSeconds = outputArray.join("").toString();
@@ -146,10 +147,10 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
         }
     }
 
+    document.getElementById("planet-results").style.display = 'block';
     resultsHeader.innerHTML = "Your age, if you lived on " + value + ", would be:";
     yearResults.innerHTML = "<strong>" + ageInYears.toFixed(1) + "</strong> years old.";
     secondsResult.innerHTML = "<strong>" + ageSecondString + "</strong> seconds old."; 
-    //console.log("Your age, if you were to live on " + value + " would be: " + ageInYears.toFixed(1) + " years old. In seconds that would be: " + ageInSeconds.toFixed(0) + " seconds!");
 }
 
 function RobotName(){
