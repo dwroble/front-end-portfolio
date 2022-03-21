@@ -2,6 +2,10 @@ body {
     width: 100%;
 }
 
+h3.handshake {
+    margin: 0 0 -20px 0px;
+}
+
 #pangram {
     background-color: lightsalmon;
     width: 50% !important;
@@ -39,6 +43,7 @@ body {
 
 #wordy {
     background-color: lavender;
+    margin-left: 0px;
 }
 
 #wordy-button-div {
@@ -52,6 +57,7 @@ body {
 
 #robot-name {
     background-color: lightblue;
+    margin-left: 0px;
 }
 
 #handshake-div {
@@ -60,12 +66,17 @@ body {
 
 #handshake-input-div {
     background-color: slateblue;
+    height: 200px;
 }
 
 #handshake-explanation {
     background-color: skyblue;
-    height: 150px;
+    height: 200px;
     line-height: 0.7;
+}
+
+.handshake-info {
+    padding-left: 5%;
 }
 
 .common-form {

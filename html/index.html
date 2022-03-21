@@ -22,63 +22,63 @@
         </div>
     </div>
     <br>
-    <div id="outer-container">
-        <div id="inner-container">
-            <div id="planets">
-                <div id="planet-form" class="common-form">
-                    <h3>Your age on other planets</h3>
-                    <div id="planet-value-input">
-                        <label for="age-input">Enter Your Age:</label>
-                        <input id="age-input">
-                    </div>
-                    <div>
-                        <select name="planets" id="planet-list" onchange="SpaceAge(this.options[this.selectedIndex].value)">
-                            <option value="initial">Select Planet</option>
-                            <option value="mercury">Mercury</option>
-                            <option value="venus">Venus</option>
-                            <option value="earth">Earth</option>
-                            <option value="mars">Mars</option>
-                            <option value="jupiter">Jupiter</option>
-                            <option value="saturn">Saturn</option>
-                            <option value="uranus">Uranus</option>
-                            <option value="neptune">Neptune</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="planet-results" class="common-form">
-                    <p id="planet-result-header"></p>
-                    <p id="planet-result-years"></p>
-                    <p id="planet-result-seconds"></p>
-                </div>
+    <div id="planets">
+        <div id="planet-form" class="common-form">
+            <h3>Your age on other planets</h3>
+            <div id="planet-value-input">
+                <label for="age-input">Enter Your Age:</label>
+                <input id="age-input">
             </div>
-        
-            <div id="robot-name" class="common-form">
-                <button id="add-name" onclick="RobotName()">Add Robot Name</button>
-                <p>Use console to display.</p>
-            </div>
-        
-            <div id="wordy" class="common-form" onmouseenter="WordyTooltipOn()" onmouseleave="WordyTooltipOff()">
-                <div id="wordy-button-div">
-                    <p>
-                        To use this, go into file.js and change the input value in the wordy function. 
-                        Make sure your console is open to view results!
-                    </p>
-                </div>
-                <button id="add-name" onclick="Wordy()">Calculate Word Problem</button>
+            <div>
+                <select name="planets" id="planet-list" onchange="SpaceAge(this.options[this.selectedIndex].value)">
+                    <option value="initial">Select Planet</option>
+                    <option value="mercury">Mercury</option>
+                    <option value="venus">Venus</option>
+                    <option value="earth">Earth</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturn">Saturn</option>
+                    <option value="uranus">Uranus</option>
+                    <option value="neptune">Neptune</option>
+                </select>
             </div>
         </div>
+        <div id="planet-results" class="common-form">
+            <p id="planet-result-header"></p>
+            <p id="planet-result-years"></p>
+            <p id="planet-result-seconds"></p>
+        </div>
+    </div>
+
+    <div id="robot-name" class="common-form">
+        <button id="add-name" onclick="RobotName()">Add Robot Name</button>
+        <p>Use console to display.</p>
+    </div>
+
+    <div id="wordy" class="common-form" onmouseenter="WordyTooltipOn()" onmouseleave="WordyTooltipOff()">
+        <div id="wordy-button-div">
+            <p>
+                To use this, go into file.js and change the input value in the wordy function. 
+                Make sure your console is open to view results!
+            </p>
+        </div>
+        <button id="add-name" onclick="Wordy()">Calculate Word Problem</button>
     </div>
     <div id="handshake-div">
         <div id="handshake-explanation" class="common-form">
-            <p>1 = wink</p>
-            <p>10 = double blink</p>
-            <p>100 = close your eyes</p>
-            <p>1000 = jump</p>
-            <p>10000 = Reverse the order</p>
+            <h4>Handshake Decoder</h4>
+            <p class="handshake-info">1 = wink</p>
+            <p class="handshake-info">10 = double blink</p>
+            <p class="handshake-info">100 = close your eyes</p>
+            <p class="handshake-info">1000 = jump</p>
+            <p class="handshake-info">10000 = Reverse the order</p>
         </div>
         <div id="handshake-input-div" class="common-form">
+            <h3 class="handshake">Secret Handshake Decoder</h3>
+            <h4>Enter value 1 - 31</h4>
             <input id="handshake-input">
             <button id="handshake-button">Enter</button>
+            <p id="handshake-bin-val"></p>
             <p id="handshake-output"></p>
         </div>
     </div>

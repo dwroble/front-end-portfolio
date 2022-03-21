@@ -336,6 +336,7 @@ function SecretHandshake(input: number) {
         displayArray.push(key[outputValuesArray[i]]);
     }    
 
+    document.getElementById("handshake-bin-val").innerHTML = inputValue.toString();
     document.getElementById("handshake-output").innerHTML = displayArray.join(', ');
 }
 

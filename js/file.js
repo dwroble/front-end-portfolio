@@ -1,3 +1,4 @@
+//initial state ready functions
 window.onload = function () {
     if (document.readyState == "complete") {
         console.log("Ready");
@@ -17,6 +18,8 @@ window.onload = function () {
         console.log("Not Ready Yet");
     }
 };
+//Validates wether or not a phrase includes all the letters of the alphabet (a pangram)
+//From https://exercism.org/tracks/typescript/exercises/pangram
 function Pangram(name) {
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
         'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
@@ -45,6 +48,8 @@ function Pangram(name) {
         document.getElementById('pangram-result').innerHTML = "{" + name + "} <u>is NOT a pangram!</u>";
     }
 }
+//Calculates your rotations around the sun (your age) on other planets
+//From https://exercism.org/tracks/typescript/exercises/space-age
 function SpaceAge(value) {
     // Planet rotation around sun in years
     // 1 year = 365.25 Earth days, or 31557600 seconds
@@ -115,6 +120,7 @@ function SpaceAge(value) {
         selection.value = "initial";
     }
 }
+//Responsible for taking the calculated input and displaying it in a read friendly output
 function PlanetOutput(value, ageInSeconds, ageInYears) {
     var resultsHeader = document.getElementById("planet-result-header");
     var yearResults = document.getElementById("planet-result-years");
@@ -138,6 +144,8 @@ function PlanetOutput(value, ageInSeconds, ageInYears) {
     yearResults.innerHTML = "<strong>" + ageInYears.toFixed(1) + "</strong> years old.";
     secondsResult.innerHTML = "<strong>" + ageSecondString + "</strong> seconds old.";
 }
+// Adds a unique robot name to the assembly line with the first 2 digits A-Z and the last 3 0-9
+//From https://exercism.org/tracks/typescript/exercises/robot-name
 function RobotName() {
     var maxNum = 999;
     var maxLetter = 25;
@@ -163,6 +171,8 @@ function RobotName() {
         alert(name + " already exists would you like to factory reset?");
     }
 }
+//Parse and evaluate simple math word problems returning the answer as an integer.
+//From https://exercism.org/tracks/typescript/exercises/wordy
 function Wordy() {
     var regEx = /[,.?!]/;
     //Change this to any simple math word problem
@@ -219,6 +229,19 @@ function WordyTooltipOn() {
 function WordyTooltipOff() {
     document.getElementById('wordy-button-div').style.display = 'none';
 }
+// You and your fellow cohort of those in the "know" when it comes 
+// to binary decide to come up with a secret "handshake".
+// 1 = wink
+// 10 = double blink
+// 100 = close your eyes
+// 1000 = jump
+// 10000 = Reverse the order of the operations in the secret handshake.
+// Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.
+// Here's a couple of examples:
+// Given the input 3, the function would return the array ["wink", "double blink"] because 3 is 11 in binary.
+// Given the input 19, the function would return the array ["double blink", "wink"] because 19 is 10011 in binary. 
+// Notice that the addition of 16 (10000 in binary) has caused the array to be reversed.
+//From https://exercism.org/tracks/typescript/exercises/secret-handshake
 function SecretHandshake(input) {
     if (input == null) {
         //TODO: output for null input
@@ -266,8 +289,10 @@ function SecretHandshake(input) {
     for (var i = 0; i < outputValuesArray.length; i++) {
         displayArray.push(key[outputValuesArray[i]]);
     }
+    document.getElementById("handshake-bin-val").innerHTML = inputValue.toString();
     document.getElementById("handshake-output").innerHTML = displayArray.join(', ');
 }
+//Returns binary value of decimal number
 function dec2bin(dec) {
     return parseInt((dec >>> 0).toString(2));
 }
