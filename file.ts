@@ -1,3 +1,4 @@
+//initial state ready functions
 window.onload = function() {
 
     if(document.readyState == "complete"){
@@ -21,6 +22,7 @@ window.onload = function() {
     }
 }
 
+//Validates wether or not a phrase includes all the letters of the alphabet (a pangram)
 function Pangram(name: string): void {
     let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                     'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
@@ -55,6 +57,7 @@ function Pangram(name: string): void {
     }
 }
 
+//Calculates your rotations around the sun (your age) on other planets
 function SpaceAge(value: string){
     
     // Planet rotation around sun in years
@@ -128,6 +131,7 @@ function SpaceAge(value: string){
     }
 }
 
+//Responsible for taking the calculated input and displaying it in a read friendly output
 function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): void {
 
     var resultsHeader = document.getElementById("planet-result-header");
@@ -158,6 +162,7 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
     secondsResult.innerHTML = "<strong>" + ageSecondString + "</strong> seconds old."; 
 }
 
+// Adds a unique robot name to the assembly line with the first 2 digits A-Z and the last 3 0-9
 function RobotName(){
     const maxNum: number = 999
     const maxLetter: number = 25;
@@ -328,6 +333,7 @@ function SecretHandshake(input: number) {
     document.getElementById("handshake-output").innerHTML = displayArray.join(', ');
 }
 
+//Returns binary value of decimal number
 function dec2bin(dec: number): number {
     return parseInt((dec >>> 0).toString(2));
 }
