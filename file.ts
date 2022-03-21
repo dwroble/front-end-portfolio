@@ -23,6 +23,7 @@ window.onload = function() {
 }
 
 //Validates wether or not a phrase includes all the letters of the alphabet (a pangram)
+//From https://exercism.org/tracks/typescript/exercises/pangram
 function Pangram(name: string): void {
     let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                     'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
@@ -58,6 +59,7 @@ function Pangram(name: string): void {
 }
 
 //Calculates your rotations around the sun (your age) on other planets
+//From https://exercism.org/tracks/typescript/exercises/space-age
 function SpaceAge(value: string){
     
     // Planet rotation around sun in years
@@ -163,6 +165,7 @@ function PlanetOutput(value: string, ageInSeconds: number, ageInYears: number): 
 }
 
 // Adds a unique robot name to the assembly line with the first 2 digits A-Z and the last 3 0-9
+//From https://exercism.org/tracks/typescript/exercises/robot-name
 function RobotName(){
     const maxNum: number = 999
     const maxLetter: number = 25;
@@ -194,6 +197,7 @@ function RobotName(){
 }
 
 //Parse and evaluate simple math word problems returning the answer as an integer.
+//From https://exercism.org/tracks/typescript/exercises/wordy
 function Wordy(): void{
     let regEx = /[,.?!]/;
 
@@ -274,6 +278,8 @@ function WordyTooltipOff(): void{
 // Given the input 3, the function would return the array ["wink", "double blink"] because 3 is 11 in binary.
 // Given the input 19, the function would return the array ["double blink", "wink"] because 19 is 10011 in binary. 
 // Notice that the addition of 16 (10000 in binary) has caused the array to be reversed.
+
+//From https://exercism.org/tracks/typescript/exercises/secret-handshake
 function SecretHandshake(input: number) {
 
     if(input == null){

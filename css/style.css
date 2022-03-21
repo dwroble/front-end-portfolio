@@ -17,6 +17,19 @@ body {
     width: 50% !important;
 }
 
+#description-div {
+    height: 125px;
+    background-color: tomato;
+    width: 25%;
+}
+
+#outer-container {
+
+}
+
+#inner-container {
+}
+
 #planets {
     margin-top: inherit;
 }
