@@ -3,12 +3,17 @@ window.onload = function() {
     if(document.readyState == "complete"){
         console.log("Ready");
         var executeButton = document.getElementById("execute-button");
+        var handshakeButton = document.getElementById("handshake-button");
         var pangramInput = document.getElementById("pangram-input") as HTMLInputElement;
+        var handshakeInput = document.getElementById("handshake-input") as HTMLInputElement;
 
         executeButton.onclick =  function() {
             console.log(pangramInput.value);
             Pangram(pangramInput.value);
-            //Pangram("Two driven jocks help fax my big quiz.");
+        }
+
+        handshakeButton.onclick = function() {
+            SecretHandshake(parseInt(handshakeInput.value));
         }
     }
     else{
@@ -183,6 +188,7 @@ function RobotName(){
     }
 }
 
+//Parse and evaluate simple math word problems returning the answer as an integer.
 function Wordy(): void{
     let regEx = /[,.?!]/;
 
@@ -240,10 +246,88 @@ function Wordy(): void{
     console.log(calculation[operator](numericalValues[0], numericalValues[1]));
 }
 
-function WordyTooltipOn(){
+function WordyTooltipOn(): void{
     document.getElementById('wordy-button-div').style.display = 'block';
 }
 
-function WordyTooltipOff(){
+function WordyTooltipOff(): void{
     document.getElementById('wordy-button-div').style.display = 'none';
+}
+
+// You and your fellow cohort of those in the "know" when it comes 
+// to binary decide to come up with a secret "handshake".
+
+// 1 = wink
+// 10 = double blink
+// 100 = close your eyes
+// 1000 = jump
+// 10000 = Reverse the order of the operations in the secret handshake.
+
+// Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.
+
+// Here's a couple of examples:
+// Given the input 3, the function would return the array ["wink", "double blink"] because 3 is 11 in binary.
+// Given the input 19, the function would return the array ["double blink", "wink"] because 19 is 10011 in binary. 
+// Notice that the addition of 16 (10000 in binary) has caused the array to be reversed.
+function SecretHandshake(input: number) {
+
+    if(input == null){
+        //TODO: output for null input
+        throw new Error();
+    }
+
+    //Change decimal input to binary 
+    let inputValue = dec2bin(input);
+
+    let key = {
+        1: 'Wink',
+        10: 'Double blink',
+        100: 'Close your eyes',
+        1000: 'Jump'
+    };
+
+    let inputArray = inputValue.toString().split('');
+
+    //Changes the input array into an array that represents a binary number
+    for(let i = 0; i < 5 - inputArray.length; i++){
+        inputArray.unshift('0');
+    }
+
+    var outputValuesArray: string [] = [];
+    inputArray = inputArray.reverse();
+    for(let i = 0; i < inputArray.length; i++){
+        
+        if(inputArray[i] == '1'){
+            switch(i){
+                case 0:
+                    outputValuesArray.push('1');
+                    break;
+                case 1:
+                    outputValuesArray.push('10');
+                    break;
+                case 2:
+                    outputValuesArray.push('100');
+                    break;
+                case 3:
+                    outputValuesArray.push('1000');
+                    break;
+                case 4:
+                    outputValuesArray = outputValuesArray.reverse();
+                    break;
+                default:
+                    console.log("Invalid Input!");
+            }
+        }
+    }
+
+    var displayArray: string[] = [];
+    for(let i = 0; i < outputValuesArray.length; i++){
+        displayArray.push(key[outputValuesArray[i]]);
+    }    
+
+    document.getElementById("handshake-output").innerHTML = displayArray.join(', ');
+}
+
+function dec2bin(dec: number): number {
+    return parseInt((dec >>> 0).toString(2));
 }

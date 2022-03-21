@@ -48,6 +48,20 @@ body {
     background-color: lightblue;
 }
 
+#handshake-div {
+    display: flex;
+}
+
+#handshake-input-div {
+    background-color: slateblue;
+}
+
+#handshake-explanation {
+    background-color: skyblue;
+    height: 150px;
+    line-height: 0.7;
+}
+
 .common-form {
     margin: inherit;
     padding-top: 10px;

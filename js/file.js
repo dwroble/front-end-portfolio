@@ -2,11 +2,15 @@ window.onload = function () {
     if (document.readyState == "complete") {
         console.log("Ready");
         var executeButton = document.getElementById("execute-button");
+        var handshakeButton = document.getElementById("handshake-button");
         var pangramInput = document.getElementById("pangram-input");
+        var handshakeInput = document.getElementById("handshake-input");
         executeButton.onclick = function () {
             console.log(pangramInput.value);
             Pangram(pangramInput.value);
-            //Pangram("Two driven jocks help fax my big quiz.");
+        };
+        handshakeButton.onclick = function () {
+            SecretHandshake(parseInt(handshakeInput.value));
         };
     }
     else {
@@ -214,4 +218,56 @@ function WordyTooltipOn() {
 }
 function WordyTooltipOff() {
     document.getElementById('wordy-button-div').style.display = 'none';
+}
+function SecretHandshake(input) {
+    if (input == null) {
+        //TODO: output for null input
+        throw new Error();
+    }
+    //Change decimal input to binary 
+    var inputValue = dec2bin(input);
+    var key = {
+        1: 'Wink',
+        10: 'Double blink',
+        100: 'Close your eyes',
+        1000: 'Jump'
+    };
+    var inputArray = inputValue.toString().split('');
+    //Changes the input array into an array that represents a binary number
+    for (var i = 0; i < 5 - inputArray.length; i++) {
+        inputArray.unshift('0');
+    }
+    var outputValuesArray = [];
+    inputArray = inputArray.reverse();
+    for (var i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] == '1') {
+            switch (i) {
+                case 0:
+                    outputValuesArray.push('1');
+                    break;
+                case 1:
+                    outputValuesArray.push('10');
+                    break;
+                case 2:
+                    outputValuesArray.push('100');
+                    break;
+                case 3:
+                    outputValuesArray.push('1000');
+                    break;
+                case 4:
+                    outputValuesArray = outputValuesArray.reverse();
+                    break;
+                default:
+                    console.log("Invalid Input!");
+            }
+        }
+    }
+    var displayArray = [];
+    for (var i = 0; i < outputValuesArray.length; i++) {
+        displayArray.push(key[outputValuesArray[i]]);
+    }
+    document.getElementById("handshake-output").innerHTML = displayArray.join(', ');
+}
+function dec2bin(dec) {
+    return parseInt((dec >>> 0).toString(2));
 }
