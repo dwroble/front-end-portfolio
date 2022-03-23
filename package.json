@@ -1,0 +1,19 @@
+{
+  "name": "my-typescript-poc",
+  "version": "1.0.0",
+  "description": "My TypeScript POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwroble/front-end-portfolio.git"
+  },
+  "author": "dwroble",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwroble/front-end-portfolio/issues"
+  },
+  "homepage": "https://github.com/dwroble/front-end-portfolio#readme"
+}
